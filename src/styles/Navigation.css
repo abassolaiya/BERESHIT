@@ -1,0 +1,185 @@
+:root {
+  --primary-blue: #2f9dbf;
+  --primary-brown: #766956;
+  --dark-gray: #211e1b;
+  --deep-blue-gray: #172024;
+  --almost-black: #191818;
+  --very-dark-gray: #111212;
+  --white: #ffffff;
+  --transition: all 0.3s ease;
+}
+
+/* Navigation */
+.navbar {
+  background: var(--deep-blue-gray); /* Solid dark background on load */
+  padding: 1.5rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  background: var(--deep-blue-gray); /* Same solid background when scrolled */
+  padding: 1rem 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Logo Styles */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* Space between logo and brand name */
+}
+
+.logo-img {
+  height: 40px;
+  width: auto;
+  transition: var(--transition);
+}
+
+.navbar.scrolled .logo-img {
+  height: 35px;
+}
+
+.nav-logo h2 {
+  color: var(--very-dark-gray); /* CHANGED: Use very-dark-gray on load */
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  margin: 0;
+  transition: var(--transition);
+}
+
+.navbar.scrolled .nav-logo h2 {
+  color: var(--white); /* CHANGED: White text when scrolled */
+}
+
+/* Navigation Menu */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  color: var(--very-dark-gray); /* CHANGED: Use very-dark-gray on load */
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none; /* No default underline */
+  transition: var(--transition);
+  padding: 0.5rem 0;
+}
+
+.nav-item:hover {
+  color: var(--primary-blue); /* Blue hover contrasts with background */
+}
+
+.navbar.scrolled .nav-item {
+  color: var(--white); /* CHANGED: White text when scrolled */
+}
+
+.navbar.scrolled .nav-item:hover {
+  color: var(--primary-blue);
+}
+
+/* Mobile Toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background: var(--very-dark-gray); /* CHANGED: Use very-dark-gray on load */
+  margin: 3px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.navbar.scrolled .bar {
+  background: var(--white); /* CHANGED: White hamburger when scrolled */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 968px) {
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
+    width: 70%;
+    flex-direction: column;
+    background: var(--deep-blue-gray); /* Solid dark background */
+    text-align: center;
+    transition: 0.5s;
+    box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    padding: 5rem 0;
+    z-index: 999;
+  }
+
+  .nav-menu.active {
+    left: 0;
+  }
+
+  .nav-item {
+    padding: 1.5rem;
+    width: 100%;
+    display: block;
+    color: var(--very-dark-gray); /* CHANGED: Use very-dark-gray on load */
+    font-size: 1.2rem;
+  }
+
+  .navbar.scrolled .nav-item {
+    color: var(--white); /* CHANGED: White text when scrolled */
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
+
+@media (max-width: 576px) {
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+
+  .logo-img {
+    height: 35px;
+  }
+
+  .navbar.scrolled .logo-img {
+    height: 30px;
+  }
+
+  .nav-logo h2 {
+    font-size: 1.3rem;
+  }
+}
