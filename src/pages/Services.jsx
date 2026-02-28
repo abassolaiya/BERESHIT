@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Services.css";
 
 const Services = () => {
@@ -223,7 +224,9 @@ const Services = () => {
                     ))}
                   </ul>
                 </div>
-                <button className="service-cta">Learn More</button>
+                <Link to="/contact" className="service-cta">
+                  Learn More
+                </Link>
               </div>
             ))}
           </div>
@@ -292,8 +295,12 @@ const Services = () => {
               benefit your next project.
             </p>
             <div className="cta-buttons">
-              <button className="btn-primary">Request a Quote</button>
-              <button className="btn-secondary">Schedule Consultation</button>
+              <Link to="/contact" className="btn-primary">
+                Request a Quote
+              </Link>
+              <Link to="/contact" className="btn-secondary">
+                Schedule Consultation
+              </Link>
             </div>
           </div>
         </div>

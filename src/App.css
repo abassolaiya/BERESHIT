@@ -152,7 +152,8 @@ body {
   width: 100%;
   height: 100%;
   background: 
-    /* Wave pattern */ radial-gradient(
+    /* Wave pattern */
+    radial-gradient(
       circle at 50% 100%,
       rgba(47, 157, 191, 0.1) 10%,
       transparent 10.5%
@@ -173,7 +174,10 @@ body {
       rgba(17, 18, 18, 0.9) 100%
     );
   background-size: 40px 40px;
-  background-position: 0 0, 20px 20px, 40px 40px;
+  background-position:
+    0 0,
+    20px 20px,
+    40px 40px;
   z-index: -1;
 }
 
@@ -185,7 +189,8 @@ body {
   width: 100%;
   height: 100%;
   background: 
-    /* Circular pattern */ radial-gradient(
+    /* Circular pattern */
+    radial-gradient(
       circle at 20% 30%,
       rgba(47, 157, 191, 0.15) 0%,
       transparent 25%
@@ -201,7 +206,7 @@ body {
       transparent 20%
     ),
     /* Line pattern */
-      repeating-linear-gradient(
+    repeating-linear-gradient(
         45deg,
         transparent,
         transparent 10px,
@@ -780,6 +785,261 @@ section {
   transition: var(--transition);
 }
 
+/* Carousel Section Styles */
+.carousel-section {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.carousel-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background: var(--white);
+}
+
+.carousel-main {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.carousel-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.carousel-image:hover {
+  transform: scale(1.05);
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  color: var(--white);
+  text-align: left;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.carousel-image-wrapper:hover .carousel-caption {
+  transform: translateY(0);
+}
+
+.carousel-caption h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-blue);
+}
+
+.carousel-caption p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--white);
+  transition: var(--transition);
+  z-index: 10;
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.carousel-arrow:hover {
+  background: var(--primary-blue);
+  transform: translateY(-50%) scale(1.1);
+  border-color: var(--primary-blue);
+}
+
+.carousel-prev {
+  left: 20px;
+}
+
+.carousel-next {
+  right: 20px;
+}
+
+.carousel-thumbnails {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 15px;
+  background: var(--white);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.carousel-thumbnail {
+  position: relative;
+  height: 100px;
+  cursor: pointer;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+  border: 3px solid transparent;
+}
+
+.carousel-thumbnail.active {
+  border-color: var(--primary-blue);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(47, 157, 191, 0.3);
+}
+
+.carousel-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.carousel-thumbnail:hover img {
+  transform: scale(1.1);
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.carousel-thumbnail:hover .thumbnail-overlay {
+  opacity: 1;
+}
+
+.thumbnail-overlay span {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.2rem;
+  background: var(--primary-blue);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-indicators {
+  display: none;
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 10px;
+  z-index: 10;
+}
+
+.carousel-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 0;
+}
+
+.carousel-indicator.active {
+  background: var(--primary-blue);
+  transform: scale(1.2);
+  box-shadow: 0 0 10px var(--primary-blue);
+}
+
+/* Responsive Design for Carousel */
+@media (max-width: 768px) {
+  .carousel-main {
+    height: 350px;
+  }
+
+  .carousel-thumbnails {
+    display: none;
+  }
+
+  .carousel-indicators {
+    display: flex;
+  }
+
+  .carousel-arrow {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption {
+    transform: translateY(0);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4));
+  }
+
+  .carousel-caption h3 {
+    font-size: 1.2rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-main {
+    height: 250px;
+  }
+
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  .carousel-caption {
+    padding: 1rem;
+  }
+
+  .carousel-caption h3 {
+    font-size: 1rem;
+  }
+
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
+}
+
 .project-btn:hover {
   background: var(--primary-blue);
   color: var(--white);
@@ -799,7 +1059,8 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 25% 25%,
       rgba(47, 157, 191, 0.1) 2%,
       transparent 5%
@@ -824,7 +1085,8 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 20% 80%,
       rgba(47, 157, 191, 0.15) 0%,
       transparent 20%
@@ -956,7 +1218,9 @@ section {
 .slide-in-right,
 .zoom-in {
   opacity: 0;
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transition:
+    opacity 0.8s ease-out,
+    transform 0.8s ease-out;
 }
 
 .fade-in {

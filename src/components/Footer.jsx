@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import React from "react";
 import "../styles/Footer.css";
 
@@ -15,7 +16,7 @@ function Footer() {
             <div className="footer-section">
               <h4>Contact Us</h4>
               <p>Email: info@bereshitglobal.com</p>
-              <p>Phone: +234 XXX XXXX XXX</p>
+              <p>Phone: +234 8067716622</p>
               <div className="social-icons">
                 <span className="social-icon">📱</span>
                 <span className="social-icon">💬</span>
@@ -24,10 +25,26 @@ function Footer() {
             </div>
             <div className="footer-section">
               <h4>Quick Links</h4>
-              <p>Services</p>
-              <p>About Us</p>
-              <p>Projects</p>
-              <p>Contact</p>
+              <p>
+                <Link to="/services" className="nav-item">
+                  Services
+                </Link>
+              </p>
+              <p>
+                <Link to="/about" className="nav-item">
+                  About
+                </Link>
+              </p>
+              <p>
+                <Link to="/projects" className="nav-item">
+                  Projects
+                </Link>
+              </p>
+              <p>
+                <Link to="/contact" className="nav-item">
+                  Contact
+                </Link>
+              </p>
             </div>
           </div>
           <div className="footer-bottom">

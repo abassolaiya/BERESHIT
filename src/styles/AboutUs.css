@@ -4,6 +4,81 @@
   padding-top: 80px;
 }
 
+/* Team Member Image Styles */
+.team-member {
+  text-align: center;
+  padding: 2rem;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.member-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 5px solid var(--primary-blue);
+  box-shadow: 0 10px 20px rgba(47, 157, 191, 0.3);
+  position: relative;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #2a8bad 100%);
+}
+
+.member-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.team-member:hover .member-image img {
+  transform: scale(1.1);
+}
+
+/* Fallback for missing images */
+.member-image.image-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.member-initials {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #2a8bad 100%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .member-image {
+    width: 150px;
+    height: 150px;
+  }
+
+  .member-initials {
+    font-size: 2.5rem;
+  }
+}
+
 /* Hero Section */
 .about-hero {
   min-height: 60vh;
@@ -28,7 +103,8 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
+  background:
+    radial-gradient(
       circle at 20% 80%,
       rgba(47, 157, 191, 0.15) 0%,
       transparent 20%

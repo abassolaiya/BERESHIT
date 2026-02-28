@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/Projects.css";
 
 const Projects = () => {
@@ -289,8 +290,12 @@ const Projects = () => {
               a consultation.
             </p>
             <div className="cta-buttons">
-              <button className="btn-primary">Get a Quote</button>
-              <button className="btn-secondary">View Our Services</button>
+              <Link to="/contact" className="btn-primary">
+                Get a Quote
+              </Link>
+              <Link to="/services" className="btn-secondary">
+                View Our Services
+              </Link>
             </div>
           </div>
         </div>
@@ -353,7 +358,13 @@ const Projects = () => {
             </div>
 
             <div className="modal-footer">
-              <button className="btn-primary">Request Similar Project</button>
+              <Link
+                to="/contact"
+                className="btn-primary"
+                state={{ projectInterest: selectedProject.title }}
+              >
+                Request Similar Project
+              </Link>
               <button className="btn-secondary" onClick={closeProjectModal}>
                 Close
               </button>

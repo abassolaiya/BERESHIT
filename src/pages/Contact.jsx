@@ -250,8 +250,8 @@ _This message was sent from the Bereshit Global website_
                     <h4>WhatsApp</h4>
                     <p>Direct chat with our team</p>
                     <a
-                      href="https://wa.me/234XXXXXXXXXX"
-                      target="_blank"
+                      href="https://wa.me/+2348067716622"
+                      // target="_blank"
                       rel="noopener noreferrer"
                       className="contact-link whatsapp-link"
                     >
@@ -265,16 +265,17 @@ _This message was sent from the Bereshit Global website_
                   <div>
                     <h4>Office Address</h4>
                     <p>
-                      123 Engineering Street, Victoria Island, Lagos, Nigeria
+                      Suite D, OGC Plaza, Favos Junction, New Bodija, Ibadan,
+                      Oyo State, Nigeria
                     </p>
-                    <a
+                    {/* <a
                       href="https://maps.google.com/?q=123+Engineering+Street,Victoria+Island,Lagos,Nigeria"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="contact-link"
                     >
                       View on Map
-                    </a>
+                    </a> */}
                   </div>
                 </div>
 
@@ -300,16 +301,19 @@ _This message was sent from the Bereshit Global website_
           <div className="map-placeholder">
             <div className="map-content">
               <div className="map-icon">🗺️</div>
-              <h3>Victoria Island, Lagos</h3>
-              <p>123 Engineering Street, Victoria Island, Lagos, Nigeria</p>
-              <a
+              <h3> New Bodija, Ibadan, Oyo State</h3>
+              <p>
+                Suite D, OGC Plaza, Favos Junction, New Bodija, Ibadan, Oyo
+                State, Nigeria
+              </p>
+              {/* <a
                 href="https://maps.google.com/?q=123+Engineering+Street,Victoria+Island,Lagos,Nigeria"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary"
               >
                 Open in Google Maps
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

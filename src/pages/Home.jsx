@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import carosel1 from "../Images/Carousel 01.jpg";
+import carosel2 from "../Images/Carousel 02.jpg";
+import carosel3 from "../Images/Carousel 03.jpg";
+import carosel4 from "../Images/Carousel 04.jpg";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeService, setActiveService] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
     // Scroll animation initialization
@@ -32,13 +38,32 @@ const Home = () => {
       setIsScrolled(window.scrollY > 50);
     };
 
+    // Auto-rotate carousel
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 4);
+    }, 3000);
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
       observer.disconnect();
       window.removeEventListener("scroll", handleScroll);
+      clearInterval(interval);
     };
   }, []);
+
+  // Carousel navigation functions
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 4);
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + 4) % 4);
+  };
+
+  const goToImage = (index) => {
+    setCurrentImageIndex(index);
+  };
 
   const services = [
     {
@@ -127,6 +152,35 @@ const Home = () => {
     { name: "Industrial Facility", type: "HVAC Optimization", image: "🏭" },
   ];
 
+  // Carousel images array
+  const carouselImages = [
+    {
+      src: carosel1,
+      alt: "MEP Engineering Design Project",
+      title: "Commercial MEP Design",
+      description: "State-of-the-art mechanical systems for modern buildings",
+    },
+    {
+      src: carosel2,
+      alt: "Industrial MEP Installation Project",
+      title: "Industrial MEP Systems Engineering",
+      description:
+        "Integrated mechanical, electrical, and plumbing design for high-performance commercial and industrial infrastructure",
+    },
+    {
+      src: carosel3,
+      alt: "Smart Home Automation",
+      title: "Intelligent Automation",
+      description: "Smart home and office automation systems",
+    },
+    {
+      src: carosel4,
+      alt: "Construction Project",
+      title: "MEP Construction",
+      description: "Professional installation and implementation services",
+    },
+  ];
+
   return (
     <div className="App">
       {/* Navigation */}
@@ -173,6 +227,87 @@ const Home = () => {
         </div>
         <div className="scroll-indicator">
           <div className="scroll-line"></div>
+        </div>
+      </section>
+
+      {/* Image Carousel Section */}
+      <section className="carousel-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Our Projects in Action</h2>
+            <p>
+              Take a closer look at our recent MEP engineering and installation
+              projects
+            </p>
+          </div>
+
+          <div className="carousel-container">
+            <div className="carousel-main">
+              <button
+                className="carousel-arrow carousel-prev"
+                onClick={prevImage}
+              >
+                ❮
+              </button>
+
+              <div className="carousel-image-wrapper">
+                <img
+                  src={carouselImages[currentImageIndex].src}
+                  alt={carouselImages[currentImageIndex].alt}
+                  className="carousel-image"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      "https://via.placeholder.com/800x500?text=Image+Not+Found";
+                  }}
+                />
+                <div className="carousel-caption">
+                  <h3>{carouselImages[currentImageIndex].title}</h3>
+                  <p>{carouselImages[currentImageIndex].description}</p>
+                </div>
+              </div>
+
+              <button
+                className="carousel-arrow carousel-next"
+                onClick={nextImage}
+              >
+                ❯
+              </button>
+            </div>
+
+            <div className="carousel-thumbnails">
+              {carouselImages.map((image, index) => (
+                <div
+                  key={index}
+                  className={`carousel-thumbnail ${currentImageIndex === index ? "active" : ""}`}
+                  onClick={() => goToImage(index)}
+                >
+                  <img
+                    src={image.src}
+                    alt={`Thumbnail ${index + 1}`}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src =
+                        "https://via.placeholder.com/150x100?text=Thumbnail";
+                    }}
+                  />
+                  <div className="thumbnail-overlay">
+                    <span>{index + 1}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="carousel-indicators">
+              {carouselImages.map((_, index) => (
+                <button
+                  key={index}
+                  className={`carousel-indicator ${currentImageIndex === index ? "active" : ""}`}
+                  onClick={() => goToImage(index)}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -314,8 +449,13 @@ const Home = () => {
             benefit your next project.
           </p>
           <div className="cta-buttons">
-            <button className="btn-primary">Get a Quote</button>
-            <button className="btn-secondary">Schedule Consultation</button>
+            {/* <button className="btn-secondary">Get a Quote</button> */}
+            <Link to="/contact" className="btn-secondary">
+              Get a Quote
+            </Link>
+            <Link to="/contact" className="nav-item">
+              Schedule Consultation
+            </Link>
           </div>
         </div>
       </section>

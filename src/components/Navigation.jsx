@@ -1,13 +1,22 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../styles/Navigation.css";
-import logo from "../Images/bereshit-logo.png"; // Ensure this path is correct
+import logo from "../Images/bereshit-logo.png";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+
+  const isLandingPage = location.pathname === "/";
 
   useEffect(() => {
+    if (!isLandingPage) {
+      // On other pages, navbar should always be white
+      setIsScrolled(true);
+      return;
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
@@ -17,10 +26,14 @@ const Navigation = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isLandingPage]);
 
   return (
-    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+    <nav
+      className={`navbar ${
+        isLandingPage ? (isScrolled ? "scrolled" : "") : "scrolled"
+      }`}
+    >
       <div className="nav-container">
         <div className="nav-logo">
           <img
@@ -28,14 +41,15 @@ const Navigation = () => {
             alt="Bereshit Global Logo"
             className="logo-img"
             onError={(e) => {
-              e.target.style.display = "none"; // Hide image if it fails
+              e.target.style.display = "none";
               console.warn(
-                "Failed to load logo image at ../Images/bereshit-logo.png"
+                "Failed to load logo image at ../Images/bereshit-logo.png",
               );
             }}
           />
-          <h2>BERESHIT GLOBAL</h2> {/* Always show brand name */}
+          <h2>BERESHIT GLOBAL</h2>
         </div>
+
         <div className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
           <Link
             to="/"
@@ -73,6 +87,7 @@ const Navigation = () => {
             Contact
           </Link>
         </div>
+
         <div className="nav-toggle" onClick={() => setIsMenuOpen(!isMenuOpen)}>
           <span className="bar"></span>
           <span className="bar"></span>

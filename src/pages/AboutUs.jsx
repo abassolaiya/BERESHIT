@@ -1,7 +1,36 @@
 import React from "react";
 import "../styles/AboutUs.css";
+import { Link } from "react-router-dom";
+import oluwastosin from "../Images/Oluwatosin Ayansina 002.jpg";
+import peter from "../Images/Peter.jpg";
+import olayinka from "../Images/Barr Yinka Image.jpg";
 
 const AboutUs = () => {
+  // Team members data with image paths
+  const teamMembers = [
+    {
+      name: "Peter OMOYENI, (MNSE, R.Eng)",
+      position: "Principal Consultant",
+      bio: "An experienced MEP Engineer and project consultant, Engr. Peter Omoyeni leads Bereshit Global Co. Ltd. with a focus on delivering innovative, efficient, and standards-driven engineering solutions across residential, commercial, and infrastructure developments.",
+      image: peter,
+      credentials: "MNSE, R.Eng",
+    },
+    {
+      name: "Oluwatosin AYANSINA",
+      position: "Lead Administrative Consultant",
+      bio: "A seasoned administrative professional, Oluwatosin Ayansina provides strategic administrative leadership and operational coordination at Bereshit Global Co. Ltd., ensuring efficient project support, organizational structure, and seamless execution of corporate and client-facing operations.",
+      image: oluwastosin,
+      credentials: "",
+    },
+    {
+      name: "Olayinka OGUNMODIMU, (LL.B, BL, LL.M)",
+      position: "Corporate Legal Consultant",
+      bio: "A seasoned legal practitioner and Managing Partner at Òfin Chambers, Olayinka Ogunmodimu specializes in Property and Commercial Law, providing strategic legal advisory and ensuring sound regulatory and contractual compliance for Bereshit Global Co. Ltd.",
+      image: olayinka,
+      credentials: "LL.B, BL, LL.M",
+    },
+  ];
+
   return (
     <div className="about-us-page">
       {/* Hero Section */}
@@ -256,7 +285,7 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Leadership Team */}
+      {/* Leadership Team - Updated with real team members */}
       <section className="leadership-team">
         <div className="container">
           <div className="section-header">
@@ -264,31 +293,31 @@ const AboutUs = () => {
             <p>Experienced professionals driving our success</p>
           </div>
           <div className="team-grid">
-            <div className="team-member">
-              <div className="member-image"></div>
-              <h3>John Doe</h3>
-              <p className="position">Chief Executive Officer</p>
-              <p className="bio">
-                20+ years of experience in MEP engineering and project
-                management.
-              </p>
-            </div>
-            <div className="team-member">
-              <div className="member-image"></div>
-              <h3>Jane Smith</h3>
-              <p className="position">Technical Director</p>
-              <p className="bio">
-                Expert in sustainable design and energy-efficient solutions.
-              </p>
-            </div>
-            <div className="team-member">
-              <div className="member-image"></div>
-              <h3>Robert Johnson</h3>
-              <p className="position">Operations Manager</p>
-              <p className="bio">
-                Specializes in large-scale MEP projects and implementation.
-              </p>
-            </div>
+            {teamMembers.map((member, index) => (
+              <div key={index} className="team-member">
+                <div className="member-image">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.style.display = "none";
+                      e.target.parentNode.classList.add("image-fallback");
+                      // Add fallback with initials
+                      const initials = member.name
+                        .split(" ")
+                        .map((n) => n[0])
+                        .join("")
+                        .substring(0, 2);
+                      e.target.parentNode.innerHTML = `<div class="member-initials">${initials}</div>`;
+                    }}
+                  />
+                </div>
+                <h3>{member.name}</h3>
+                <p className="position">{member.position}</p>
+                <p className="bio">{member.bio}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -303,8 +332,12 @@ const AboutUs = () => {
               project.
             </p>
             <div className="cta-buttons">
-              <button className="btn-primary">Contact Us</button>
-              <button className="btn-secondary">View Our Projects</button>
+              <Link to="/contact" className="btn-primary">
+                Contact Us
+              </Link>
+              <Link to="/projects" className="btn-secondary">
+                View Our Projects
+              </Link>
             </div>
           </div>
         </div>
