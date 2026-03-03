@@ -261,7 +261,7 @@ const Projects = () => {
         <div className="container">
           <div className="stats-grid">
             <div className="stat-item">
-              <h3>50+</h3>
+              <h3>100+</h3>
               <p>Projects Completed</p>
             </div>
             <div className="stat-item">
@@ -269,7 +269,7 @@ const Projects = () => {
               <p>Years Experience</p>
             </div>
             <div className="stat-item">
-              <h3>12</h3>
+              <h3>15</h3>
               <p>States in Nigeria</p>
             </div>
             <div className="stat-item">
@@ -290,6 +290,8 @@ const Projects = () => {
               a consultation.
             </p>
             <div className="cta-buttons">
+              {/* <button className="btn-primary">Get a Quote</button>
+              <button className="btn-secondary">View Our Services</button> */}
               <Link to="/contact" className="btn-primary">
                 Get a Quote
               </Link>
@@ -358,13 +360,7 @@ const Projects = () => {
             </div>
 
             <div className="modal-footer">
-              <Link
-                to="/contact"
-                className="btn-primary"
-                state={{ projectInterest: selectedProject.title }}
-              >
-                Request Similar Project
-              </Link>
+              <button className="btn-primary">Request Similar Project</button>
               <button className="btn-secondary" onClick={closeProjectModal}>
                 Close
               </button>

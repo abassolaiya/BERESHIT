@@ -316,7 +316,7 @@ const Home = () => {
         <div className="container">
           <div className="stats-grid">
             <div className="stat-item zoom-in">
-              <h3>250+</h3>
+              <h3>100+</h3>
               <p>Projects Completed</p>
             </div>
             <div className="stat-item zoom-in">

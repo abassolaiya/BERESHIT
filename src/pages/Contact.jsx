@@ -234,9 +234,9 @@ _This message was sent from the Bereshit Global website_
                   <div className="contact-icon">📧</div>
                   <div>
                     <h4>Email</h4>
-                    <p>info@bereshitglobal.com</p>
+                    <p>bereshitglobalcoltd@gmail.com</p>
                     <a
-                      href="mailto:info@bereshitglobal.com"
+                      href="mailto:bereshitglobalcoltd@gmail.com"
                       className="contact-link"
                     >
                       Send Email
@@ -281,9 +281,8 @@ _This message was sent from the Bereshit Global website_
 
                 <div className="business-hours">
                   <h4>Business Hours</h4>
-                  <p>Monday - Friday: 8:00 AM - 6:00 PM</p>
-                  <p>Saturday: 9:00 AM - 2:00 PM</p>
-                  <p>Sunday: Closed</p>
+                  <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                  <p>Saturday & Sunday: Closed</p>
                 </div>
               </div>
             </div>
