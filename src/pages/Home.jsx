@@ -156,28 +156,31 @@ const Home = () => {
   const carouselImages = [
     {
       src: carosel1,
-      alt: "MEP Engineering Design Project",
-      title: "Commercial MEP Design",
-      description: "State-of-the-art mechanical systems for modern buildings",
+      alt: "Renewable Energy Systems",
+      title: "Renewable Energy Systems",
+      description:
+        "Design and installation of sustainable solar and hybrid power solutions that improve energy efficiency and reduce operational costs.",
     },
     {
       src: carosel2,
-      alt: "Industrial MEP Installation Project",
+      alt: "Industrial MEP Systems Engineering",
       title: "Industrial MEP Systems Engineering",
       description:
-        "Integrated mechanical, electrical, and plumbing design for high-performance commercial and industrial infrastructure",
+        "Comprehensive mechanical, electrical, and plumbing engineering solutions tailored for commercial and industrial facilities.",
     },
     {
       src: carosel3,
-      alt: "Smart Home Automation",
-      title: "Intelligent Automation",
-      description: "Smart home and office automation systems",
+      alt: "Water Treatment Systems",
+      title: "Water Treatment Systems",
+      description:
+        "Advanced water purification and treatment systems designed to ensure safe, efficient, and regulatory-compliant water management.",
     },
     {
       src: carosel4,
-      alt: "Construction Project",
-      title: "MEP Construction",
-      description: "Professional installation and implementation services",
+      alt: "Industrial Piping & Ducting Systems",
+      title: "Industrial Piping & Ducting Systems",
+      description:
+        "Precision-engineered piping and ducting installations that support efficient fluid transport and optimized airflow systems.",
     },
   ];
 
