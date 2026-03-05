@@ -127,7 +127,7 @@ const AboutUs = () => {
           </div>
           <div className="timeline">
             <div className="timeline-item">
-              <div className="timeline-year">2009</div>
+              <div className="timeline-year">2010</div>
               <div className="timeline-content">
                 <h3>Foundation</h3>
                 <p>
