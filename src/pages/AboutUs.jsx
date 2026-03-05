@@ -81,7 +81,7 @@ const AboutUs = () => {
               </div>
               <div className="stat">
                 <h3>50+</h3>
-                <p>Expert Engineers</p>
+                <p> Engineers and Technical Expert</p>
               </div>
             </div>
           </div>

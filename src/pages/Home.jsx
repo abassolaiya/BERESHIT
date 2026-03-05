@@ -163,8 +163,8 @@ const Home = () => {
     },
     {
       src: carosel2,
-      alt: "Industrial MEP Systems Engineering",
-      title: "Industrial MEP Systems Engineering",
+      alt: "HVAC System",
+      title: "HVAC System",
       description:
         "Comprehensive mechanical, electrical, and plumbing engineering solutions tailored for commercial and industrial facilities.",
     },
@@ -332,7 +332,7 @@ const Home = () => {
             </div>
             <div className="stat-item zoom-in">
               <h3>50+</h3>
-              <p>Expert Engineers</p>
+              <p>Engineers and Technical Expert</p>
             </div>
           </div>
         </div>
@@ -365,14 +365,14 @@ const Home = () => {
                 comfort, efficiency, and sustainability."
               </p>
             </div>
-            <div className="about-image slide-in-right">
+            {/* <div className="about-image slide-in-right">
               <div className="floating-elements">
                 <div className="floating-element element-1">⚡</div>
                 <div className="floating-element element-2">🔧</div>
                 <div className="floating-element element-3">🌞</div>
                 <div className="floating-element element-4">🏢</div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
