@@ -5,7 +5,7 @@ import carosel2 from "../Images/Carousel 02.jpg";
 import carosel3 from "../Images/Carousel 03.jpg";
 import carosel4 from "../Images/Carousel 04.jpg";
 import caro5 from "../Images/Caro5.jpeg";
-import caro6 from "../Images/caro6.jpeg";
+import caro6 from "../Images/Caro6.jpeg";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
