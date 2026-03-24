@@ -15,7 +15,9 @@ function Footer() {
             </div>
             <div className="footer-section">
               <h4>Contact Us</h4>
-              <p>Email: info@bereshitglobal.com</p>
+              <p>
+                Email: info@bereshitglobal.com, bereshitglobalcoltd@gmail.com
+              </p>
               <p>Phone: +234 8067716622</p>
               <div className="social-icons">
                 <span className="social-icon">📱</span>

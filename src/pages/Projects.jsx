@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Projects.css";
+import carosel4 from "../Images/crc.jpeg";
+import res from "../Images/res.jpeg";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -9,123 +11,119 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "Lagos Commercial Complex",
-      category: "commercial",
+      title: "Christian Retreat Center, Ikorodu, Lagos",
+      category: "hospitality",
       type: "MEP Design & Installation",
-      image: "🏢",
+      image: carosel4,
       description:
-        "Complete MEP design and installation for a 15-story commercial complex in Lagos.",
+        "Complete MEP design and installation for a Multi-Building Facility in Ikorodu, Lagos.",
       features: [
         "HVAC system design and installation",
         "Electrical power distribution",
         "Plumbing and fire protection systems",
+        "Energy Management System",
         "Energy-efficient lighting design",
         "Building automation integration",
       ],
-      location: "Lagos, Nigeria",
+      location: "Ikorodu, Lagos, Nigeria",
       duration: "18 months",
-      size: "25,000 sqm",
-      completion: "2023",
+      size: "4,5000 sqm",
+      completion: "2025",
     },
     {
       id: 2,
-      title: "Abuja Residential Tower",
+      title: "Residential Apartment",
       category: "residential",
-      type: "Energy Efficiency Upgrade",
-      image: "🏘️",
-      description:
-        "Energy efficiency retrofit and MEP optimization for a luxury residential tower.",
+      type: "MEP Project Management",
+      image: res,
+      description: "Adron City Parks and Gardens, Asejire, Ibadan",
       features: [
+        "MEP Systems Installation",
         "Energy audit and assessment",
-        "HVAC system optimization",
         "Solar energy integration",
         "Smart home automation",
-        "Water conservation systems",
+        "Plumbing Systems",
       ],
-      location: "Abuja, Nigeria",
-      duration: "12 months",
-      size: "15,000 sqm",
-      completion: "2022",
+      location: "Oyo state, Nigeria",
+      duration: "16 months",
+      size: "500 sqm",
+      completion: "2026",
     },
     {
       id: 3,
-      title: "Ikeja Corporate Office",
-      category: "commercial",
-      type: "Smart Automation System",
+      title: "Residential Apartment",
+      category: "residential",
+      type: "MEP Design, Construction, and Project Management",
       image: "🏛️",
       description:
-        "Complete smart building automation system for a corporate headquarters.",
+        "Contemporary MEP Systems for 21st Century Residence, Basorun, Ibadan",
       features: [
-        "Integrated building management system",
-        "Smart lighting and climate control",
-        "Access control and security systems",
-        "Energy monitoring and optimization",
-        "IoT sensor network deployment",
+        "MEP Systems Installation",
+        "Energy audit and assessment",
+        "Solar energy integration",
+        "Smart Home Automation",
+        "Plumbing and HVAC System",
       ],
-      location: "Ikeja, Nigeria",
-      duration: "8 months",
-      size: "8,000 sqm",
-      completion: "2023",
+      location: "Oyo state, Nigeria",
+      duration: "24 months",
+      size: "1,200 sqm",
+      completion: "2026",
     },
     {
       id: 4,
-      title: "Port Harcourt Industrial Facility",
-      category: "industrial",
-      type: "HVAC Optimization",
-      image: "🏭",
+      title: "Ikoyi Luxury Apartments",
+      category: "Residential",
+      type: "MEP Construction, and Project Management",
+      image: "🏛️",
       description:
-        "HVAC system redesign and optimization for an industrial manufacturing facility.",
+        "Contemporary MEP Systems for 21st Century Residence, Basorun, Ibadan",
       features: [
-        "Industrial ventilation system design",
-        "Process cooling systems",
-        "Energy recovery systems",
-        "Dust extraction and filtration",
-        "Climate control automation",
+        "MEP Systems Installation",
+        "Smart Home Automation",
+        "Plumbing and HVAC System",
+        "Sewage and Waste Management System",
       ],
-      location: "Port Harcourt, Nigeria",
-      duration: "10 months",
-      size: "12,000 sqm",
-      completion: "2022",
+      location: "Lagos, Nigeria",
+      duration: "Ongoing",
+      size: "1,500 sqm",
+      completion: "In-view",
     },
     {
       id: 5,
-      title: "Victoria Island Luxury Apartments",
-      category: "residential",
-      type: "MEP Design & Construction",
+      title: "ASUU Secretariat Complex and Scholars' Chalet",
+      category: "institutional",
+      type: "Electrical Engineering Design and Project Management",
       image: "🏢",
       description:
-        "Complete MEP solutions for a luxury apartment complex in Victoria Island.",
+        "Complete Electrical Engineering solutions for a institutional facility in UI Extension, Ajibode, Ibadan.",
       features: [
-        "Complete MEP system design",
-        "High-efficiency HVAC installation",
-        "Advanced plumbing systems",
+        "Complete Electrical system design",
         "Home automation integration",
+        "Data and Networking System",
+        "Energy Management System",
         "Renewable energy systems",
       ],
-      location: "Victoria Island, Lagos",
-      duration: "14 months",
+      location: "Oyo state, Nigeria",
+      duration: "36 months",
       size: "20,000 sqm",
       completion: "2023",
     },
     {
       id: 6,
-      title: "Lekki Shopping Mall",
-      category: "commercial",
-      type: "Energy Audit & Solar Solutions",
+      title: "Faith-Life FeedMills",
+      category: "industrial",
+      type: "Power System Installation",
       image: "🛍️",
-      description:
-        "Comprehensive energy audit and solar power integration for a large shopping mall.",
+      description: "Feed Mill Equipment Power Installation, Akinyele, Ibadan",
       features: [
-        "Detailed energy consumption analysis",
+        "Industrial cable routing and containment",
         "Solar power system installation",
-        "Energy-efficient lighting retrofit",
-        "HVAC system optimization",
-        "Energy management system",
+        "Installation of single phase and 3 phase electric motors",
       ],
-      location: "Lekki, Lagos",
-      duration: "9 months",
-      size: "30,000 sqm",
-      completion: "2022",
+      location: "Oyo state, Nigeria",
+      duration: "3 months",
+      size: "20,000 sqm",
+      completion: "2025",
     },
     {
       id: 7,
@@ -175,7 +173,7 @@ const Projects = () => {
     { id: "residential", name: "Residential" },
     { id: "industrial", name: "Industrial" },
     { id: "institutional", name: "Institutional" },
-    { id: "healthcare", name: "Healthcare" },
+    { id: "hospitality", name: "Hospitality" },
   ];
 
   const filteredProjects =
@@ -238,7 +236,18 @@ const Projects = () => {
                 className="project-card"
                 onClick={() => openProjectModal(project)}
               >
-                <div className="project-image">{project.image}</div>
+                <div className="project-image">
+                  <img
+                    src={project.image}
+                    alt={project.id}
+                    className="carousel-image"
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src =
+                        "https://via.placeholder.com/800x500?text=Image+Not+Found";
+                    }}
+                  />
+                </div>
                 <div className="project-content">
                   <span className="project-category">{project.category}</span>
                   <h3>{project.title}</h3>
@@ -312,7 +321,19 @@ const Projects = () => {
             </button>
 
             <div className="modal-header">
-              <div className="modal-image">{selectedProject.image}</div>
+              <div className="modal-image">
+                {" "}
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.id}
+                  className="carousel-image"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      "https://via.placeholder.com/800x500?text=Image+Not+Found";
+                  }}
+                />
+              </div>
               <div className="modal-title">
                 <span className="project-category">
                   {selectedProject.category}
