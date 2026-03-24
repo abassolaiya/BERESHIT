@@ -4,6 +4,8 @@ import carosel1 from "../Images/Carousel 01.jpg";
 import carosel2 from "../Images/Carousel 02.jpg";
 import carosel3 from "../Images/Carousel 03.jpg";
 import carosel4 from "../Images/Carousel 04.jpg";
+import caro5 from "../Images/Caro5.jpeg";
+import caro6 from "../Images/caro6.jpeg";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -155,18 +157,32 @@ const Home = () => {
   // Carousel images array
   const carouselImages = [
     {
+      src: caro6,
+      alt: "Electrical CAD Designs",
+      title: "Electrical CAD Designs",
+      description:
+        "Precision-engineered piping and ducting installations that support efficient fluid transport and optimized airflow systems.",
+    },
+    {
       src: carosel1,
       alt: "Renewable Energy Systems",
       title: "Renewable Energy Systems",
       description:
-        "Design and installation of sustainable solar and hybrid power solutions that improve energy efficiency and reduce operational costs.",
+        "Precision-driven electrical layouts developed with advanced CAD tools, ensuring efficient power distribution, smart integration, and code-compliant performance.",
     },
     {
       src: carosel2,
       alt: "HVAC System",
       title: "HVAC System",
       description:
-        "Comprehensive mechanical, electrical, and plumbing engineering solutions tailored for commercial and industrial facilities.",
+        "We deliver efficient and reliable HVAC solutions tailored to meet the comfort, health, and performance requirements of modern buildings",
+    },
+    {
+      src: caro5,
+      alt: "Mechanical CAD Designs",
+      title: "Mechanical CAD Designs",
+      description:
+        "Optimized HVAC and plumbing systems modeled with advanced CAD tools, ensuring efficient performance, coordinated layouts, and reliable service delivery.",
     },
     {
       src: carosel3,
@@ -174,13 +190,6 @@ const Home = () => {
       title: "Water Treatment Systems",
       description:
         "Advanced water purification and treatment systems designed to ensure safe, efficient, and regulatory-compliant water management.",
-    },
-    {
-      src: carosel4,
-      alt: "Industrial Piping & Ducting Systems",
-      title: "Industrial Piping & Ducting Systems",
-      description:
-        "Precision-engineered piping and ducting installations that support efficient fluid transport and optimized airflow systems.",
     },
   ];
 
