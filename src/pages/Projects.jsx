@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Projects.css";
 import carosel4 from "../Images/crc.jpeg";
+import ind from "../Images/ind.jpeg";
+import asuu from "../Images/asuu.jpeg";
 import res from "../Images/res.jpeg";
 
 const Projects = () => {
@@ -93,7 +95,7 @@ const Projects = () => {
       title: "ASUU Secretariat Complex and Scholars' Chalet",
       category: "institutional",
       type: "Electrical Engineering Design and Project Management",
-      image: "🏢",
+      image: asuu,
       description:
         "Complete Electrical Engineering solutions for a institutional facility in UI Extension, Ajibode, Ibadan.",
       features: [
@@ -113,7 +115,7 @@ const Projects = () => {
       title: "Faith-Life FeedMills",
       category: "industrial",
       type: "Power System Installation",
-      image: "🛍️",
+      image: ind,
       description: "Feed Mill Equipment Power Installation, Akinyele, Ibadan",
       features: [
         "Industrial cable routing and containment",
