@@ -4,7 +4,10 @@ import "../styles/Projects.css";
 import carosel4 from "../Images/crc.jpeg";
 import ind from "../Images/ind.jpeg";
 import asuu from "../Images/asuu.jpeg";
+import indus from "../Images/indus.jpeg";
 import res from "../Images/res.jpeg";
+import ressi from "../Images/ressi.jpeg";
+import comm from "../Images/comm.jpeg";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -56,7 +59,7 @@ const Projects = () => {
       title: "Residential Apartment",
       category: "residential",
       type: "MEP Design, Construction, and Project Management",
-      image: "🏛️",
+      image: ressi,
       description:
         "Contemporary MEP Systems for 21st Century Residence, Basorun, Ibadan",
       features: [
@@ -74,11 +77,11 @@ const Projects = () => {
     {
       id: 4,
       title: "Ikoyi Luxury Apartments",
-      category: "Residential",
+      category: "residential",
       type: "MEP Construction, and Project Management",
       image: "🏛️",
       description:
-        "Contemporary MEP Systems for 21st Century Residence, Basorun, Ibadan",
+        "Contemporary MEP Systems for 21st Century Residence, Ikoyi, Lagos",
       features: [
         "MEP Systems Installation",
         "Smart Home Automation",
@@ -129,43 +132,45 @@ const Projects = () => {
     },
     {
       id: 7,
-      title: "Kaduna Educational Facility",
-      category: "institutional",
-      type: "MEP Installation",
-      image: "🎓",
+      title: "MBT Plaza, Sagamu, Ogun State",
+      category: "commercial",
+      type: "MEP Design & Installation",
+      image: comm,
       description:
-        "MEP system installation for a new university campus building.",
+        "Comprehensive MEP design and installation for a commercial plaza in Sagamu, Ogun State, delivering efficient, reliable, and scalable building services to support retail and business operations.",
       features: [
-        "Classroom HVAC systems",
-        "Laboratory specialized ventilation",
-        "Campus-wide electrical distribution",
-        "Water conservation systems",
-        "Fire detection and protection",
+        "Electrical power distribution system",
+        "Energy-efficient lighting design",
+        "HVAC system design and installation",
+        "Plumbing and water supply systems",
+        "Fire protection systems",
+        "Infrastructure coordination and system integration",
       ],
-      location: "Kaduna, Nigeria",
-      duration: "11 months",
+      location: "Ogun state, Nigeria",
+      duration: "Ongoing",
       size: "18,000 sqm",
-      completion: "2023",
+      completion: "2026",
     },
     {
       id: 8,
-      title: "Asaba Hospital Complex",
-      category: "healthcare",
-      type: "Specialized MEP Systems",
-      image: "🏥",
+      title: "The Lights Village, Ibadan",
+      category: "commercial",
+      type: "MEP Design & Installation",
+      image: indus,
       description:
-        "Specialized MEP systems for a healthcare facility with critical environment requirements.",
+        "Comprehensive MEP design and installation for a commercial development in Ibadan, focused on efficiency, reliability, and modern building standards.",
       features: [
-        "Medical gas systems installation",
-        "Critical environment HVAC",
-        "Backup power systems",
-        "Infection control ventilation",
-        "Building automation system",
+        "Energy-efficient lighting design",
+        "Infrastructure coordination and system integration",
+        "HVAC system design and installation",
+        "Electrical power distribution system",
+        "Plumbing and water reticulation systems",
+        "Fire protection systems",
       ],
-      location: "Asaba, Nigeria",
-      duration: "16 months",
-      size: "22,000 sqm",
-      completion: "2022",
+      location: "Oyo state, Nigeria",
+      duration: "14 months",
+      size: "450,000 sqm",
+      completion: "2026",
     },
   ];
 
