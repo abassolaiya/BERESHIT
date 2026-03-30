@@ -7,6 +7,13 @@ import carosel4 from "../Images/Carousel 04.jpg";
 import caro5 from "../Images/Caro5.jpeg";
 import caro6 from "../Images/Caro6.jpeg";
 
+import ind from "../Images/ind.jpeg";
+import asuu from "../Images/asuu.jpeg";
+import indus from "../Images/indus.jpeg";
+import res from "../Images/res.jpeg";
+import ressi from "../Images/ressi.jpeg";
+import comm from "../Images/comm.jpeg";
+
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeService, setActiveService] = useState(0);
@@ -42,7 +49,7 @@ const Home = () => {
 
     // Auto-rotate carousel
     const interval = setInterval(() => {
-      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 4);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5);
     }, 3000);
 
     window.addEventListener("scroll", handleScroll);
@@ -56,11 +63,11 @@ const Home = () => {
 
   // Carousel navigation functions
   const nextImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 4);
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % 5);
   };
 
   const prevImage = () => {
-    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + 4) % 4);
+    setCurrentImageIndex((prevIndex) => (prevIndex - 1 + 5) % 5);
   };
 
   const goToImage = (index) => {
@@ -141,17 +148,85 @@ const Home = () => {
 
   const projects = [
     {
-      name: "Commercial Complex",
+      id: 1,
+      name: "Christian Retreat Center, Ikorodu, Lagos",
+      category: "hospitality",
       type: "MEP Design & Installation",
-      image: "🏢",
+      image: carosel4,
+      description:
+        "Complete MEP design and installation for a Multi-Building Facility in Ikorodu, Lagos.",
+      features: [
+        "HVAC system design and installation",
+        "Electrical power distribution",
+        "Plumbing and fire protection systems",
+        "Energy Management System",
+        "Energy-efficient lighting design",
+        "Building automation integration",
+      ],
+      location: "Ikorodu, Lagos, Nigeria",
+      duration: "18 months",
+      size: "4,5000 sqm",
+      completion: "2025",
     },
     {
-      name: "Residential Tower",
-      type: "Energy Efficiency Upgrade",
-      image: "🏘️",
+      id: 2,
+      name: "Residential Apartment",
+      category: "residential",
+      type: "MEP Project Management",
+      image: res,
+      description: "Adron City Parks and Gardens, Asejire, Ibadan",
+      features: [
+        "MEP Systems Installation",
+        "Energy audit and assessment",
+        "Solar energy integration",
+        "Smart home automation",
+        "Plumbing Systems",
+      ],
+      location: "Oyo state, Nigeria",
+      duration: "16 months",
+      size: "500 sqm",
+      completion: "2026",
     },
-    { name: "Corporate Office", type: "Smart Automation System", image: "🏛️" },
-    { name: "Industrial Facility", type: "HVAC Optimization", image: "🏭" },
+    {
+      id: 3,
+      name: "Residential Apartment",
+      category: "residential",
+      type: "MEP Design, Construction, and Project Management",
+      image: ressi,
+      description:
+        "Contemporary MEP Systems for 21st Century Residence, Basorun, Ibadan",
+      features: [
+        "MEP Systems Installation",
+        "Energy audit and assessment",
+        "Solar energy integration",
+        "Smart Home Automation",
+        "Plumbing and HVAC System",
+      ],
+      location: "Oyo state, Nigeria",
+      duration: "24 months",
+      size: "1,200 sqm",
+      completion: "2026",
+    },
+    {
+      id: 4,
+      name: "ASUU Secretariat Complex and Scholars' Chalet",
+      category: "institutional",
+      type: "Electrical Engineering Design and Project Management",
+      image: asuu,
+      description:
+        "Complete Electrical Engineering solutions for a institutional facility in UI Extension, Ajibode, Ibadan.",
+      features: [
+        "Complete Electrical system design",
+        "Home automation integration",
+        "Data and Networking System",
+        "Energy Management System",
+        "Renewable energy systems",
+      ],
+      location: "Oyo state, Nigeria",
+      duration: "36 months",
+      size: "20,000 sqm",
+      completion: "2023",
+    },
   ];
 
   // Carousel images array
@@ -195,30 +270,6 @@ const Home = () => {
 
   return (
     <div className="App">
-      {/* Navigation */}
-      {/* <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-        <div className="nav-container">
-          <div className="nav-logo">
-            <h2>BERESHIT GLOBAL</h2>
-          </div>
-          <div className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
-            <div className="nav-item">Home</div>
-            <div className="nav-item">Services</div>
-            <div className="nav-item">About</div>
-            <div className="nav-item">Projects</div>
-            <div className="nav-item">Contact</div>
-          </div>
-          <div
-            className="nav-toggle"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <span className="bar"></span>
-            <span className="bar"></span>
-            <span className="bar"></span>
-          </div>
-        </div>
-      </nav> */}
-
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-background">
@@ -242,7 +293,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Image Carousel Section */}
+      {/* Image Carousel Section - FIXED */}
       <section className="carousel-section">
         <div className="container">
           <div className="section-header">
@@ -374,14 +425,6 @@ const Home = () => {
                 comfort, efficiency, and sustainability."
               </p>
             </div>
-            {/* <div className="about-image slide-in-right">
-              <div className="floating-elements">
-                <div className="floating-element element-1">⚡</div>
-                <div className="floating-element element-2">🔧</div>
-                <div className="floating-element element-3">🌞</div>
-                <div className="floating-element element-4">🏢</div>
-              </div>
-            </div> */}
           </div>
         </div>
       </section>
@@ -427,7 +470,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
+      {/* Projects Section - FIXED with white background overlay */}
       <section className="projects">
         <div className="container">
           <div className="section-header">
@@ -437,11 +480,23 @@ const Home = () => {
           <div className="projects-grid">
             {projects.map((project, index) => (
               <div key={index} className="project-card zoom-in">
-                <div className="project-image">{project.image}</div>
-                <div className="project-content">
-                  <h3>{project.name}</h3>
-                  <p>{project.type}</p>
-                  <button className="project-btn">View Details</button>
+                <div className="project-image">
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    onError={(e) => {
+                      e.target.onerror = null;
+                      e.target.src =
+                        "https://via.placeholder.com/800x500?text=Image+Not+Found";
+                    }}
+                  />
+                  <div className="project-overlay">
+                    <div className="project-content">
+                      <h3>{project.name}</h3>
+                      <p>{project.type}</p>
+                      <button className="project-btn">View Details</button>
+                    </div>
+                  </div>
                 </div>
               </div>
             ))}
@@ -461,7 +516,6 @@ const Home = () => {
             benefit your next project.
           </p>
           <div className="cta-buttons">
-            {/* <button className="btn-secondary">Get a Quote</button> */}
             <Link to="/contact" className="btn-secondary">
               Get a Quote
             </Link>
@@ -472,7 +526,301 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Footer */}
+      <style jsx>{`
+        /* Home Page Specific Styles - These only apply to this component */
+
+        /* Carousel Section Styles */
+        .carousel-section {
+          padding: 4rem 0;
+          background-color: var(--light-gray);
+        }
+
+        .carousel-container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 20px;
+        }
+
+        .carousel-main {
+          position: relative;
+          width: 100%;
+          margin-bottom: 30px;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .carousel-image-wrapper {
+          position: relative;
+          width: 100%;
+          height: 500px;
+          overflow: hidden;
+        }
+
+        .carousel-image {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .carousel-caption {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+          color: white;
+          padding: 30px;
+          text-align: left;
+        }
+
+        .carousel-caption h3 {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+          color: white;
+        }
+
+        .carousel-caption p {
+          font-size: 1rem;
+          max-width: 80%;
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        .carousel-arrow {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          background: rgba(255, 255, 255, 0.9);
+          border: none;
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          cursor: pointer;
+          font-size: 1.2rem;
+          transition: all 0.3s ease;
+          z-index: 10;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .carousel-arrow:hover {
+          background: #ff6b35;
+          color: white;
+          transform: translateY(-50%) scale(1.05);
+        }
+
+        .carousel-prev {
+          left: 20px;
+        }
+
+        .carousel-next {
+          right: 20px;
+        }
+
+        .carousel-thumbnails {
+          display: flex;
+          gap: 15px;
+          justify-content: center;
+          margin-top: 20px;
+          overflow-x: auto;
+          padding-bottom: 10px;
+        }
+
+        .carousel-thumbnail {
+          position: relative;
+          width: 100px;
+          height: 70px;
+          cursor: pointer;
+          border-radius: 8px;
+          overflow: hidden;
+          transition: all 0.3s ease;
+          flex-shrink: 0;
+        }
+
+        .carousel-thumbnail img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .carousel-thumbnail.active {
+          border: 2px solid #ff6b35;
+          transform: scale(1.05);
+        }
+
+        .thumbnail-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-weight: bold;
+        }
+
+        .carousel-indicators {
+          display: none;
+        }
+
+        /* Projects Section Fixed Styles */
+        .projects .projects-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 30px;
+          margin-top: 40px;
+        }
+
+        .projects .project-card {
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+        }
+
+        .projects .project-card:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .projects .project-image {
+          position: relative;
+          width: 100%;
+          height: 300px;
+          overflow: hidden;
+          background: linear-gradient(
+            135deg,
+            var(--primary-blue) 0%,
+            #2a8bad 100%
+          );
+        }
+
+        .projects .project-image img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.5s ease;
+        }
+
+        .projects .project-card:hover .project-image img {
+          transform: scale(1.05);
+        }
+
+        .projects .project-overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background: linear-gradient(
+            to top,
+            rgba(0, 0, 0, 0.9),
+            rgba(0, 0, 0, 0.5),
+            transparent
+          );
+          padding: 20px;
+          transition: transform 0.3s ease;
+        }
+
+        .projects .project-content {
+          color: white;
+          padding: 0;
+        }
+
+        .projects .project-content h3 {
+          font-size: 1.2rem;
+          margin-bottom: 5px;
+          color: white;
+        }
+
+        .projects .project-content p {
+          font-size: 0.9rem;
+          margin-bottom: 15px;
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        .projects .project-btn {
+          background: white;
+          color: #1a2a3a;
+          border: none;
+          padding: 8px 20px;
+          border-radius: 25px;
+          font-size: 0.85rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .projects .project-btn:hover {
+          background: #ff6b35;
+          color: white;
+          transform: translateX(5px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+          .carousel-image-wrapper {
+            height: 400px;
+          }
+
+          .carousel-caption {
+            padding: 20px;
+          }
+
+          .carousel-caption h3 {
+            font-size: 1.2rem;
+          }
+
+          .carousel-caption p {
+            font-size: 0.9rem;
+            max-width: 100%;
+          }
+
+          .carousel-thumbnails {
+            gap: 10px;
+          }
+
+          .carousel-thumbnail {
+            width: 80px;
+            height: 60px;
+          }
+
+          .projects .projects-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+
+          .projects .project-image {
+            height: 250px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .carousel-image-wrapper {
+            height: 300px;
+          }
+
+          .carousel-caption {
+            padding: 15px;
+          }
+
+          .carousel-caption h3 {
+            font-size: 1rem;
+          }
+
+          .carousel-caption p {
+            font-size: 0.8rem;
+          }
+
+          .carousel-thumbnail {
+            width: 60px;
+            height: 50px;
+          }
+        }
+      `}</style>
     </div>
   );
 };
