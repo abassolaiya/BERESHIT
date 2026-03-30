@@ -7,12 +7,10 @@ import carosel4 from "../Images/Carousel 04.jpg";
 import caro5 from "../Images/Caro5.jpeg";
 import caro6 from "../Images/Caro6.jpeg";
 
-import ind from "../Images/ind.jpeg";
 import asuu from "../Images/asuu.jpeg";
-import indus from "../Images/indus.jpeg";
 import res from "../Images/res.jpeg";
 import ressi from "../Images/ressi.jpeg";
-import comm from "../Images/comm.jpeg";
+import carosel40 from "../Images/crc.jpeg";
 
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -152,7 +150,7 @@ const Home = () => {
       name: "Christian Retreat Center, Ikorodu, Lagos",
       category: "hospitality",
       type: "MEP Design & Installation",
-      image: carosel4,
+      image: carosel40,
       description:
         "Complete MEP design and installation for a Multi-Building Facility in Ikorodu, Lagos.",
       features: [
