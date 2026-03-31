@@ -8,6 +8,7 @@ import indus from "../Images/indus.jpeg";
 import res from "../Images/res.jpeg";
 import ressi from "../Images/ressi.jpeg";
 import comm from "../Images/comm.jpeg";
+import ikoyi from "../Images/ikoyi.jpeg";
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState("all");
@@ -79,7 +80,7 @@ const Projects = () => {
       title: "Ikoyi Luxury Apartments",
       category: "residential",
       type: "MEP Construction, and Project Management",
-      image: "🏛️",
+      image: ikoyi,
       description:
         "Contemporary MEP Systems for 21st Century Residence, Ikoyi, Lagos",
       features: [
